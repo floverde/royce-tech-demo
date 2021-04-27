@@ -237,6 +237,7 @@ GET http://localhost:8080/users/1/places
 Response:
 ```
 HTTP 200 OK
+
 {
   "address": "2 Lincoln Memorial Circle NW",
   "places": {
@@ -249,6 +250,6 @@ HTTP 200 OK
 
 As a brief introduction to the structure of the application, we provide below a class diagram showing the relationship between the various classes of the application.
 
-![](https://github.com/floverde/royce-tech-demo/doc/class-diagram.svg)
+![](https://github.com/floverde/royce-tech-demo/blob/main/doc/class-diagram.svg)
 
 _Author: Fabrizio Lo Verde_
