@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.2">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>750</x>
+      <y>60</y>
+      <w>100</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>bg=green
+App
+--
+--
++Initialize()
++Run()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>680</x>
+      <y>190</y>
+      <w>250</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>bg=cyan
+&lt;&lt;interface&gt;&gt;
+/RestController/
+--
++RegisterHandlers(router: gin.Engine)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>570</x>
+      <y>210</y>
+      <w>130</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+m2=&lt;&lt;use&gt;&gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;110.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLInterface</id>
+    <coordinates>
+      <x>520</x>
+      <y>200</y>
+      <w>80</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>gin.Engine</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>790</x>
+      <y>250</y>
+      <w>30</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>680</x>
+      <y>300</y>
+      <w>250</w>
+      <h>190</h>
+    </coordinates>
+    <panel_attributes>bg=cyan
+UserRestController
+--
+-service: UserService
+-mapboxClient: MapboxClient
+--
+-findUsers(cxt: gin.Context)
+-findUser(cxt: gin.Context)
+-createUser(cxt: gin.Context)
+-updateUser(cxt: gin.Context)
+-deleteUser(cxt: gin.Context)
+-getUserPlaces(cxt: gin.Context)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>570</x>
+      <y>330</y>
+      <w>130</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+m2=&lt;&lt;use&gt;&gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;110.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLInterface</id>
+    <coordinates>
+      <x>860</x>
+      <y>770</y>
+      <w>80</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>grom.DB</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>600</x>
+      <y>430</y>
+      <w>100</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>80.0;10.0;10.0;10.0;10.0;80.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>790</x>
+      <y>120</y>
+      <w>60</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>lt=.&gt;
+&lt;&lt;use&gt;&gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>920</x>
+      <y>430</y>
+      <w>80</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;60.0;10.0;60.0;80.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>460</x>
+      <y>510</y>
+      <w>290</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>bg=orange
+&lt;&lt;interface&gt;&gt;
+/MapboxClient/
+--
++GetPlaces(address: string): HttpResponse</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>600</x>
+      <y>570</y>
+      <w>30</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>530</x>
+      <y>620</y>
+      <w>160</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>bg=orange
+MapboxClientImpl
+--
+-access_token: string</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>830</x>
+      <y>510</y>
+      <w>310</w>
+      <h>130</h>
+    </coordinates>
+    <panel_attributes>bg=yellow
+&lt;&lt;interface&gt;&gt;
+/UserService/
+--
++GetAll(): User[*]
++GetById(id: uint): User
++Create(params: UserInputDTO): User
++Update(id: uint, params: UserInputDTO): User
++Delete(id: uint)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>830</x>
+      <y>690</y>
+      <w>140</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>bg=yellow
+UserServiceImpl
+--
+-db: gorm.DB</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>890</x>
+      <y>730</y>
+      <w>30</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLInterface</id>
+    <coordinates>
+      <x>510</x>
+      <y>320</y>
+      <w>100</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>gin.Context</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>890</x>
+      <y>630</y>
+      <w>30</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;60.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1060</x>
+      <y>630</y>
+      <w>100</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+&lt;&lt;consume&gt;&gt;</panel_attributes>
+    <additional_attributes>10.0;60.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1000</x>
+      <y>690</y>
+      <w>140</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>bg=gray
+UserInputDTO
+--
++name: string
++dob: date
++address: string
++description: string</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1050</x>
+      <y>400</y>
+      <w>90</w>
+      <h>130</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+&lt;&lt;provide&gt;&gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;110.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1000</x>
+      <y>260</y>
+      <w>140</w>
+      <h>150</h>
+    </coordinates>
+    <panel_attributes>bg=gray
+User
+--
++id: uint
++name: string
++dob: date
++address: string
++description: string
++createAt: date
++updateAt: date</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>
