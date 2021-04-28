@@ -1,3 +1,0 @@
-mapbox.access_token: pk.eyJ1IjoiY2xhcmtlbnQ5MSIsImEiOiJja254ZGJzbWcxNWdyMm9vYWU2OWZtODExIn0.hELp2q_4sRqR34kQaZ5q3A
-gin-gonic.gin.mode: release
-db.filename: database.db
