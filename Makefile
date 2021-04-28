@@ -19,12 +19,15 @@ win_clean:
 
 unix_clean:
 	@rm -rf target
+	
+win_run:
+	@cd target && sample-rest-api
+	
+unix_run:
+	@cd target && ./sample-rest-api
 
 godoc:
 	@cd src && godoc -http=:6060
-
-run:
-	@cd target && ./sample-rest-api
 	
 test:
 	@cd src && go test -v ./...
