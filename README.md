@@ -38,29 +38,33 @@ The last endpoint goes beyond classic CRUD operations, but provides an example o
 ### How to build
 A `Makefile` is included in the project through which you can perform certain operations.
 
-To build the project you can use this command:
+To build the project you can use this command on Windows:
 ```
 make win_build
 ```
-If you are using a Window operation system
+or this one in a Unix-like environment:
 ```
 make unix_build
 ```
+
+### How to run
+After compiling the project, this is the command to run it on Windows:
+```
+make win_run
+```
+while this other on Unix-like environment:
+```
+make unix_run
+```
+Otherwise, it's possible running directly the `sample-rest-api` under the `target` directory.
+
+It will start a stand-alone server that will respond to http://localhost:8080/.
 
 ### How to test
 To run unit tests use this command:
 ```
 make test
 ```
-
-### How to run
-After compiling the project, there is a command to run it:
-```
-make run
-```
-Or simply run the executable `sample-rest-api` inside the `target` folder.
-
-It will start a stand-alone server that will respond to http://localhost:8080/.
 
 ### View code documentation
 To view the project code documentation, run this command:
